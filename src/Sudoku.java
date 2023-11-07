@@ -137,7 +137,10 @@ public class Sudoku {
 					}
 				}
 			}
-			if (erro == true) {
+			if(erro == true) {
+				System.out.println("erro");
+			}
+			else if (certo == false && erro == true) {
 				System.out.println("erro");
 			}
 			if( certo == true && erro == false) {
