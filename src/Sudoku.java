@@ -128,26 +128,17 @@ public class Sudoku {
 				certo = true;
 			}
 
-			for (int linha = 0; linha < 9; linha++) {
-				for (int coluna = 0; coluna < 9; coluna++) {
-					if (linha < 8) {
-						if (tabuleiro[linha][0] == tabuleiro[linha + 1][0]) {
-							erro = true;
-						}
-					}
-				}
-			}
-			if(erro == true) {
-				System.out.println("erro");
-			}
-			else if (certo == false && erro == true) {
-				System.out.println("erro");
-			}
-			if( certo == true && erro == false) {
+	
+
+			if( certo == true) {
 				System.out.println("Acertou");
+			}
+			else {
+				System.out.println("Errada");
 			}
 		}
 	
 	}
 
-}
+	}
+
