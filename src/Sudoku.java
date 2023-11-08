@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 
 public class Sudoku {
 
@@ -24,6 +24,10 @@ public class Sudoku {
 		do {
 			System.out.println("Digite a quantidade de jogadores que irao jogar Sudoku");
 			quantidade = sc.nextInt();
+			
+			if(quantidade < 0 || quantidade > 9) {
+				System.out.println("Há jogadores de mais, repita o valor.");
+			}
 		} while (quantidade < 0 || quantidade > 9);
 
 		String jogadores[] = new String[quantidade];
@@ -48,7 +52,7 @@ public class Sudoku {
 				}
 				}
 			
-			System.out.println("Jogador " + jogadores[jogadas] + "preencha o seu Sudoku");
+			System.out.println("Jogador " + jogadores[jogadas] + ", preencha o seu Sudoku");
 			for (int linha = 0; linha < 9; linha++) {
 				for (int coluna = 0; coluna < 9; coluna++) {
 					tabuleiro[linha][coluna] = sc.nextInt();
@@ -157,12 +161,25 @@ public class Sudoku {
 			
 	
 
+			System.out.println("Sudoku "+ (jogadas + 1) + ": " +jogadores[jogadas]);
 			if( certo == true) {
-				System.out.println("Acertou");
+				System.out.println("SIM");
 			}
 			else {
-				System.out.println("Errada");
+				System.out.println("NÃO");
 			}
+			for (int linha = 0; linha < 9; linha++) {
+				for (int coluna = 0; coluna < 9; coluna++) {
+					System.out.print(tabuleiro[linha][coluna] + " ");
+					if( coluna == 2 || coluna == 5 || coluna == 8 ) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n");
+				if (linha == 2  || linha == 5 || linha == 8) {
+					System.out.print("_____________________"+ "\n" + "\n");
+				}
+				}
 			
 	
 	}
