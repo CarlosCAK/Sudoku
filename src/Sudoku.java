@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 public class Sudoku {
 
 	public static void main(String[] args) {
@@ -9,10 +7,8 @@ public class Sudoku {
 
 		Scanner sc = new Scanner(System.in);
 
-		int contJogada = 0;
 		int quantidade;
 		int tabuleiro[][] = new int[9][9];
-		boolean erro = false;
 		int somaLinha1 = 0, somaLinha2 = 0, somaLinha3 = 0, somaLinha4 = 0, somaLinha5 = 0, somaLinha6 = 0,
 				somaLinha7 = 0, somaLinha8 = 0, somaLinha9 = 0;
 		int somaColuna1 = 0, somaColuna2 = 0, somaColuna3 = 0, somaColuna4 = 0, somaColuna5 = 0, somaColuna6 = 0,
@@ -20,12 +16,12 @@ public class Sudoku {
 		int somaJogo = 0;
 		boolean certo = false;
 		int cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, cont6 = 0, cont7 = 0, cont8 = 0, cont9 = 0;
-		
+
 		do {
-			System.out.println("Digite a quantidade de jogadores que irao jogar Sudoku");
+			System.out.println("Digite a quantidade de jogadores que irão jogar o Sudoku");
 			quantidade = sc.nextInt();
-			
-			if(quantidade < 0 || quantidade > 9) {
+
+			if (quantidade < 0 || quantidade > 9) {
 				System.out.println("Há jogadores de mais, repita o valor.");
 			}
 		} while (quantidade < 0 || quantidade > 9);
@@ -39,49 +35,72 @@ public class Sudoku {
 
 		for (int jogadas = 0; jogadas < quantidade; jogadas++) {
 			certo = false;
-			erro = false;
-			
-			somaColuna1 = 0; somaColuna2 = 0; somaColuna3 = 0; somaColuna4 = 0;somaColuna5 = 0;somaColuna6 = 0;somaColuna7 = 0;somaColuna8 = 0;somaColuna9 = 0;
-			somaLinha1 = 0; somaLinha2 = 0; somaLinha3 = 0; somaLinha4 = 0; somaLinha5 = 0; somaLinha6 = 0; somaLinha7 = 0; somaLinha8 = 0; somaLinha9 = 0;
+
+			somaColuna1 = 0;
+			somaColuna2 = 0;
+			somaColuna3 = 0;
+			somaColuna4 = 0;
+			somaColuna5 = 0;
+			somaColuna6 = 0;
+			somaColuna7 = 0;
+			somaColuna8 = 0;
+			somaColuna9 = 0;
+			somaLinha1 = 0;
+			somaLinha2 = 0;
+			somaLinha3 = 0;
+			somaLinha4 = 0;
+			somaLinha5 = 0;
+			somaLinha6 = 0;
+			somaLinha7 = 0;
+			somaLinha8 = 0;
+			somaLinha9 = 0;
 			somaJogo = 0;
-			cont1 = 0; 	cont2 = 0; 	cont3 = 0; 	cont4 = 0;	cont5 = 0;	cont6 = 0;	cont7 = 0; 	cont8 = 0;	cont9 = 0; 
-			
+			cont1 = 0;
+			cont2 = 0;
+			cont3 = 0;
+			cont4 = 0;
+			cont5 = 0;
+			cont6 = 0;
+			cont7 = 0;
+			cont8 = 0;
+			cont9 = 0;
+
 			for (int linha = 0; linha < 9; linha++) {
 				for (int coluna = 0; coluna < 9; coluna++) {
 					tabuleiro[linha][coluna] = 0;
 				}
-				}
-			
+			}
+
 			System.out.println("Jogador " + jogadores[jogadas] + ", preencha o seu Sudoku");
 			for (int linha = 0; linha < 9; linha++) {
 				for (int coluna = 0; coluna < 9; coluna++) {
 					tabuleiro[linha][coluna] = sc.nextInt();
-					
-					if(tabuleiro[linha][coluna] == 1 ) {
+
+					if (tabuleiro[linha][coluna] == 1) {
 						cont1++;
 					}
-					if(tabuleiro[linha][coluna] == 2 ) {
+					if (tabuleiro[linha][coluna] == 2) {
 						cont2++;
 					}
-					if(tabuleiro[linha][coluna] == 3 ) {
+					if (tabuleiro[linha][coluna] == 3) {
 						cont3++;
 					}
-					if(tabuleiro[linha][coluna] == 4 ) {
+					if (tabuleiro[linha][coluna] == 4) {
 						cont4++;
 					}
-					if(tabuleiro[linha][coluna] == 5 ) {
+					if (tabuleiro[linha][coluna] == 5) {
 						cont5++;
 					}
-					if(tabuleiro[linha][coluna] == 6 ) {
+					if (tabuleiro[linha][coluna] == 6) {
 						cont6++;
 					}
-					if(tabuleiro[linha][coluna] == 7 ) {
+					if (tabuleiro[linha][coluna] == 7) {
 						cont7++;
 					}
-					if(tabuleiro[linha][coluna] == 8 ) {
+					if (tabuleiro[linha][coluna] == 8) {
 						cont8++;
 					}
-					if(tabuleiro[linha][coluna] == 9 ) {
+					if (tabuleiro[linha][coluna] == 9) {
 						cont9++;
 					}
 
@@ -152,38 +171,36 @@ public class Sudoku {
 
 				}
 			}
-			if(somaColuna1 == 45 && somaColuna2 == 45 && somaColuna3 == 45 && somaColuna4 == 45 && somaColuna5 == 45 && somaColuna6 == 45 && somaColuna7 == 45 && somaColuna8 == 45 && somaColuna9 == 45 && somaLinha1 == 45 &&
-					somaLinha2 == 45 && somaLinha3 == 45 && somaLinha4 == 45 && somaLinha5 == 45 && somaLinha6 == 45 && somaLinha7 == 45 && somaLinha8 == 45 && somaLinha9 == 45 && somaJogo == 405 && 
-					cont1 == 9 && cont2 == 9 && cont3 == 9 && cont4 == 9 && cont5 == 9 && cont6 == 9 &&cont7 == 9 && cont8 == 9 && cont9 == 9)  {
+			if (somaColuna1 == 45 && somaColuna2 == 45 && somaColuna3 == 45 && somaColuna4 == 45 && somaColuna5 == 45
+					&& somaColuna6 == 45 && somaColuna7 == 45 && somaColuna8 == 45 && somaColuna9 == 45
+					&& somaLinha1 == 45 && somaLinha2 == 45 && somaLinha3 == 45 && somaLinha4 == 45 && somaLinha5 == 45
+					&& somaLinha6 == 45 && somaLinha7 == 45 && somaLinha8 == 45 && somaLinha9 == 45 && somaJogo == 405
+					&& cont1 == 9 && cont2 == 9 && cont3 == 9 && cont4 == 9 && cont5 == 9 && cont6 == 9 && cont7 == 9
+					&& cont8 == 9 && cont9 == 9) {
 				certo = true;
 			}
 
-			
-	
-
-			System.out.println("Sudoku "+ (jogadas + 1) + ": " +jogadores[jogadas]);
-			if( certo == true) {
+			System.out.println("Sudoku " + (jogadas + 1) + ": " + jogadores[jogadas]);
+			if (certo == true) {
 				System.out.println("SIM");
-			}
-			else {
+			} else {
 				System.out.println("NÃO");
 			}
 			for (int linha = 0; linha < 9; linha++) {
 				for (int coluna = 0; coluna < 9; coluna++) {
 					System.out.print(tabuleiro[linha][coluna] + " ");
-					if( coluna == 2 || coluna == 5 || coluna == 8 ) {
+					if (coluna == 2 || coluna == 5 || coluna == 8) {
 						System.out.print("|");
 					}
 				}
 				System.out.println("\n");
-				if (linha == 2  || linha == 5 || linha == 8) {
-					System.out.print("_____________________"+ "\n" + "\n");
+				if (linha == 2 || linha == 5 || linha == 8) {
+					System.out.print("_____________________" + "\n" + "\n");
 				}
-				}
-			
-	
-	}
+			}
+
+		}
+		sc.close();
 
 	}
 }
-
